@@ -549,72 +549,113 @@
             border-radius: 50%;
             opacity: 0.5;
         }
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        padding: 15px 5%;
+        margin-bottom: 2rem; /* Space between header and first section */
+    }
 
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .about-content, .contact-content {
-                flex-direction: column;
-            }
-            
-            .about-image, .hero-image {
-                width: 100%;
-                height: 300px;
-                position: static;
-                margin-top: 30px;
-            }
-        }
+    .menu-toggle {
+        display: block;
+    }
 
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-            
-            nav {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background: var(--bg-darker);
-                transition: all 0.3s;
-                z-index: 99;
-            }
-            
-            nav.active {
-                left: 0;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                padding: 30px;
-            }
-            
-            nav ul li {
-                margin: 15px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-        }
+    nav {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: var(--bg-darker);
+        transition: all 0.3s;
+        z-index: 99;
+        flex-direction: column;
+    }
 
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+    nav.active {
+        left: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    /* Hero Section */
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 1rem;
+        gap: 2rem;
+        position: relative;
+        margin-top: 6rem;
+    }
+
+    .hero-image {
+        position: relative;
+        width: 90%;
+        height: 300px;
+        background-image: url('./1.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        box-shadow: 0 0 30px rgba(15, 240, 252, 0.2);
+        border: 1px solid rgba(15, 240, 252, 0.3);
+        opacity: 0.9;
+        margin: 0 auto;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* About Section */
+    .about-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-image {
+        height: 300px;
+        width: 100%;
+    }
+
+    /* Projects Section */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Contact Section */
+    .contact-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -643,12 +684,13 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
+        <div class="hero-image floating"></div>
+
             <h1>Hi, I'm <span>CyberCoder</span><br>Front-End Developer</h1>
             <p>I’m a frontend developer passionate about crafting visually stunning and highly responsive websites using modern technologies like HTML, CSS, JavaScript, React.js, and Tailwind CSS. I specialize in turning ideas into interactive experiences that are accessible, fast-loading, and compatible across devices. With a keen eye for design and a focus on performance, I create seamless user interfaces that not only look great but work flawlessly in real-world scenarios.
         </p>
             <a href="#contact" class="cta-button">Get In Touch</a>
         </div>
-        <div class="hero-image floating"></div>
     </section>
 
     <!-- About Section -->
